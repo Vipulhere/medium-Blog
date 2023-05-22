@@ -40,6 +40,8 @@ app.use("/api/upload", uploadRouter);
 //   });
 // });
 
+mongoose.set('strictQuery', false);
+
 const Connect = async () => {
   try {
     await mongoose.connect(process.env.MONGO, {
@@ -48,7 +50,8 @@ const Connect = async () => {
     });
     console.log("Connected to MongoDB");
   } catch (err) {
-    throw err;
+    console.error("Error connecting to MongoDB:", err);
+    process.exit(1);
   }
 };
 
@@ -57,3 +60,5 @@ Connect().then(() => {
     console.log("Example app running at", port);
   });
 });
+
+
