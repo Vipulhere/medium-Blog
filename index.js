@@ -57,7 +57,7 @@ const Connect = async () => {
 
 Connect().then(() => {
   app.listen(port, () => {
-    console.log("Example app running at", port);
+    console.log("app running at", port);
   });
 });
 
