@@ -1,6 +1,12 @@
-# React Blogging Application with Backend
+<h2 align="center">Medium-Blog</h2>   
+<hr/>
+<br/>
 
 This is a full-stack blogging application built using React for the frontend and a backend API built with Node.js, Express.js, and MongoDB. The application allows users to create an account, write and publish blog posts, and view their profile and published blogs.
+
+<h3 align="center"><a href="https://medium-v1-clone.netlify.app/"><strong>Want to see live preview »</strong></a></h3>
+<hr/>
+<br/>
 
 ## Features
 
