@@ -7,14 +7,14 @@ import Spinner from "../images/Spinner.gif";
 const Blog = () => {
   const [blog, setBlog] = useState([]);
   const [loading, setLoading] = useState(true);
-  const PF= "http://localhost:8800/images/"
+  const PF= "https://medium-backend-q3m4.onrender.com/images/"
   const { id } = useParams();
 
   useEffect(() => {
     const FetchBlogs = async () => {
       setLoading(true);
       const data = await axios.get(
-        `http://localhost:8800/api/blogs/fetchblog/${id}`
+        `https://medium-backend-q3m4.onrender.com/api/blogs/fetchblog/${id}`
       );
       setBlog(data.data[0]);
       setLoading(false);

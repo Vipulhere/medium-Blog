@@ -14,7 +14,7 @@ const Login = () => {
   const HandleLogin = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:8800/api/auth/login",
+        "https://medium-backend-q3m4.onrender.com/api/auth/login",
         credentials,
         { headers: { "Content-Type": "application/json" } }
       );

@@ -10,7 +10,7 @@ const Profile = () => {
   const navigate = useNavigate();
   // const PF = "../../../server/Images/";
   // const PF = "../../../server/images/";
-  const PF= "http://localhost:8800/images/"
+  const PF= "https://medium-backend-q3m4.onrender.com/images/"
 
   const months = [
     "Jan",

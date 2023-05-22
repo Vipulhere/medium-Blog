@@ -22,12 +22,12 @@ const SignUp = () => {
     const cred = { ...credentials, img: filename };
 
     try {
-      await axios.post("http://localhost:8800/api/upload", formdata);
+      await axios.post("https://medium-backend-q3m4.onrender.com/api/upload", formdata);
     } catch (err) {}
 
     try {
       const res = await axios.post(
-        "http://localhost:8800/api/auth/register",
+        "https://medium-backend-q3m4.onrender.com/api/auth/register",
         cred,
         { headers: { "Content-Type": "application/json" } }
       );

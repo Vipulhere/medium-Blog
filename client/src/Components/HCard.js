@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const HCard = (props) => {
   const { blog } = props;
   // const PF = "/images/";
-  const PF= "http://localhost:8800/images/"
+  const PF= "https://medium-backend-q3m4.onrender.com/images/"
 
   return (
     <Link

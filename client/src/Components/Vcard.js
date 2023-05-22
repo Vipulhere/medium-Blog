@@ -8,7 +8,7 @@ const Vcard = (props) => {
   const { HandleDelete } = useUserContext();
   const { blog, updateBlog } = props;
   // const PF = "/images/";
-  const PF= "http://localhost:8800/images/"
+  const PF= "https://medium-backend-q3m4.onrender.com/images/"
 
   return (
     <div className="Vcard mt-5 me-5">

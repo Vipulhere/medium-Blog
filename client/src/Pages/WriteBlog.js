@@ -28,11 +28,11 @@ const WriteBlog = () => {
     const newblog = { ...blog, author, avatar, image: filename };
 
     try {
-      await axios.post("http://localhost:8800/api/upload", formdata);
+      await axios.post("https://medium-backend-q3m4.onrender.com/api/upload", formdata);
     } catch (err) {}
     try {
       setLoading(true);
-      await axios.post("http://localhost:8800/api/blogs/addblog", newblog, {
+      await axios.post("https://medium-backend-q3m4.onrender.com/api/blogs/addblog", newblog, {
         headers: {
           "Content-Type": "application/json",
           "Authorization": localStorage.getItem("token"),

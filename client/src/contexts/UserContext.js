@@ -27,14 +27,14 @@ export default function UserContextProvider({ children }) {
 
   const FetchAllBlogs = async () => {
     const data = await axios.get(
-      "http://localhost:8800/api/blogs/fetchallblogs"
+      "https://medium-backend-q3m4.onrender.com/api/blogs/fetchallblogs"
     );
     setBlogs(data.data.blogs);
   };
 
   // Fetch login user
   // const FetchUser = async () => {
-  //   const data = await axios.get("http://localhost:8800/api/auth/getuser", {
+  //   const data = await axios.get("https://medium-backend-q3m4.onrender.com/api/auth/getuser", {
   //     headers: { "Authorization": localStorage.getItem("token") },
   //   });
   //   setUser(data.data);
@@ -43,7 +43,7 @@ export default function UserContextProvider({ children }) {
 
   const FetchUser = async () => {
     try {
-      const response = await axios.get("http://localhost:8800/api/auth/getuser", {
+      const response = await axios.get("https://medium-backend-q3m4.onrender.com/api/auth/getuser", {
         headers: { "Authorization": localStorage.getItem("token") },
       });
       const user = response.data;
@@ -59,7 +59,7 @@ export default function UserContextProvider({ children }) {
   const FetchBlogs = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8800/api/blogs/fetchuserblogs",
+        "https://medium-backend-q3m4.onrender.com/api/blogs/fetchuserblogs",
         { headers: { "Authorization": localStorage.getItem("token") } }
       );
       const data = response.data;
@@ -75,7 +75,7 @@ export default function UserContextProvider({ children }) {
   const HandleEditUser = async (edit) => {
     try {
       await axios.put(
-        `http://localhost:8800/api/auth/update/${edit?._id}`,
+        `https://medium-backend-q3m4.onrender.com/api/auth/update/${edit?._id}`,
         edit,
         {
           headers: {
@@ -93,7 +93,7 @@ export default function UserContextProvider({ children }) {
   // Delete user
   const HandleDeleteUser = async (edit) => {
     try {
-      await axios.delete(`http://localhost:8800/api/auth/delete/${edit._id}`, {
+      await axios.delete(`https://medium-backend-q3m4.onrender.com/api/auth/delete/${edit._id}`, {
         headers: {
           "Content-Type": "application/json",
           "Authorization": localStorage.getItem("token"),
@@ -110,7 +110,7 @@ export default function UserContextProvider({ children }) {
   // Fetch Blog by Id
   const FetchBlogByID = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:8800/api/blogs/fetchblog/${id}`);
+      const response = await axios.get(`https://medium-backend-q3m4.onrender.com/api/blogs/fetchblog/${id}`);
       const blog = response?.data[0];
       setBlog(blog);
     } catch (error) {
@@ -124,7 +124,7 @@ export default function UserContextProvider({ children }) {
   const HandleEdit = async (edit) => {
     try {
       await axios.put(
-        `http://localhost:8800/api/blogs/updateblog/${edit._id}`,
+        `https://medium-backend-q3m4.onrender.com/api/blogs/updateblog/${edit._id}`,
         edit,
         {
           headers: {
@@ -144,7 +144,7 @@ export default function UserContextProvider({ children }) {
   // Delete Blog
   const HandleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8800/api/blogs/deleteblog/${id}`, {
+      await axios.delete(`https://medium-backend-q3m4.onrender.com/api/blogs/deleteblog/${id}`, {
         headers: {
           "Content-Type": "application/json",
           "Authorization": localStorage.getItem("token"),
