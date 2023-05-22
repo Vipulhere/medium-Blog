@@ -64,20 +64,19 @@ To run the application locally, follow these steps:
 2. Navigate to the project directory:
 
    ```bash
-   cd react-blogging-app
+   cd medium-Blog
    ```
 
 3. Install frontend dependencies:
 
    ```bash
-   cd frontend
+   cd client
    npm install
    ```
 
 4. Install backend dependencies:
 
    ```bash
-   cd ../backend
    npm install
    ```
 
