@@ -1,5 +1,3 @@
-I apologize for the oversight. The previous README didn't include information about the backend of the application. Here's an updated version that includes the backend details:
-
 # React Blogging Application with Backend
 
 This is a full-stack blogging application built using React for the frontend and a backend API built with Node.js, Express.js, and MongoDB. The application allows users to create an account, write and publish blog posts, and view their profile and published blogs.
