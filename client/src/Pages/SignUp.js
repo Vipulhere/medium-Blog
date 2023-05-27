@@ -12,23 +12,31 @@ const SignUp = () => {
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
+  const HandleImage = (e) => {
+    const file = e.target.files[0];
+    if (!file) {
+      return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      setFile(reader.result);
+    };
+
+    reader.readAsDataURL(file);
+  };
+
   const HandleSignUp = async (e) => {
     e.preventDefault();
-
-    let formdata = new FormData();
-    const filename = Date.now() + file.name;
-    formdata.append("name", filename);
-    formdata.append("file", file);
-    const cred = { ...credentials, img: filename };
-
-    try {
-      await axios.post("https://medium-backend-q3m4.onrender.com/api/upload", formdata);
-    } catch (err) {}
 
     try {
       const res = await axios.post(
         "https://medium-backend-q3m4.onrender.com/api/auth/register",
-        cred,
+        {
+          ...credentials,
+          img: file,
+        },
         { headers: { "Content-Type": "application/json" } }
       );
 
@@ -66,7 +74,8 @@ const SignUp = () => {
               name="file"
               id="file"
               className="form-control"
-              onChange={(e) => setFile(e.target.files[0])}
+              // onChange={(e) => setFile(e.target.files[0])}
+              onChange={HandleImage}
             />
           </div>
           <div>

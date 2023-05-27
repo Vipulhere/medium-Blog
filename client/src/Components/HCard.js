@@ -15,7 +15,7 @@ const HCard = (props) => {
         <div className="d-flex">
           <div
             className="avatar"
-            style={{ background: `url('${PF + blog.avatar}')` }}
+            style={{ background: `url('${blog.avatar}')` }}
           ></div>
           <p className="ms-2">{blog.author.split(" ")[0]}</p>
         </div>
@@ -29,7 +29,8 @@ const HCard = (props) => {
       </div>
       <div className="w-25">
         <img
-          src={PF + blog.image}
+          // src={PF + blog.image}
+          src={blog.image}
           className="main-img"
           width={"100%"}
           alt="img"

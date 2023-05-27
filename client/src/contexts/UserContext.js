@@ -30,6 +30,7 @@ export default function UserContextProvider({ children }) {
       "https://medium-backend-q3m4.onrender.com/api/blogs/fetchallblogs"
     );
     setBlogs(data.data.blogs);
+    // console.log(data.data)
   };
 
   // Fetch login user
@@ -63,6 +64,7 @@ export default function UserContextProvider({ children }) {
         { headers: { "Authorization": localStorage.getItem("token") } }
       );
       const data = response.data;
+      console.log(data);
       setMyBlogs(data);
     } catch (error) {
       console.error(error);

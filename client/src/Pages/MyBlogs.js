@@ -4,6 +4,7 @@ import Vcard from "../Components/Vcard";
 import { useUserContext } from "../contexts/UserContext";
 import { Navigate } from "react-router-dom";
 import Spinner from "../images/Spinner.gif";
+import { FiCloudLightning } from "react-icons/fi";
 
 const MyBlogs = () => {
   const { FetchBlogs, myblogs, HandleEdit } = useUserContext();
@@ -48,6 +49,7 @@ const MyBlogs = () => {
           ) : (
             <>
               {myblogs.map((elem) => {
+                console.log(new Date(elem.date))
                 const months = [
                   "Jan",
                   "Feb",
@@ -62,14 +64,18 @@ const MyBlogs = () => {
                   "Nov",
                   "Dec",
                 ];
-                const date = elem.date?.split("-");
+                {/* const date = elem.date?.split("-");
                 const day = date[2].split("T0")[0];
                 const month = months[date[1] - 1];
                 const year =
                   new Date().getFullYear().toString() !== date[0]
                     ? new Date().getFullYear()
-                    : "";
+                    : ""; */}
 
+                const date = new Date(elem.date);
+                const day = date.getUTCDay();
+                const month = months[date.getMonth()];
+                const year = date.getUTCFullYear();
                 const FullDate = `${day} ${month},${year}`;
 
                 return (

@@ -40,7 +40,7 @@ app.use("/api/upload", uploadRouter);
 //   });
 // });
 
-mongoose.set('strictQuery', false);
+mongoose.set("strictQuery", false);
 
 const Connect = async () => {
   try {
@@ -60,5 +60,3 @@ Connect().then(() => {
     console.log("app running at", port);
   });
 });
-
-

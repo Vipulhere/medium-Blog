@@ -7,7 +7,7 @@ import Spinner from "../images/Spinner.gif";
 const Blog = () => {
   const [blog, setBlog] = useState([]);
   const [loading, setLoading] = useState(true);
-  const PF= "https://medium-backend-q3m4.onrender.com/images/"
+  // const PF= "https://medium-backend-q3m4.onrender.com/images/"
   const { id } = useParams();
 
   useEffect(() => {
@@ -35,11 +35,11 @@ const Blog = () => {
             <div className="d-flex align-items-center mt-2">
               <div
                 className="avatar"
-                style={{ background: `url('${PF + blog.avatar}')` }}
+                style={{ background: `url('${blog.avatar}')` }}
               ></div>
               <p className="ms-2 name">{blog.author}</p>
             </div>
-            <img src={PF+ blog.image} className="blogImg mt-2" alt="img" />
+            <img src={blog.image} className="blogImg mt-2" alt="img" />
             <p className="mt-2">{blog.description}</p>
           </>
         )}

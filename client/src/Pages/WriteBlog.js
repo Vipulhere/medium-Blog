@@ -16,28 +16,44 @@ const WriteBlog = () => {
     setBlog((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
+  const HandleImage = (e) => {
+    const file = e.target.files[0];
+    if (!file) {
+      return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      setFile(reader.result);
+    };
+
+    reader.readAsDataURL(file);
+  };
+
   const HandleWrite = async (e) => {
     const author = user.name;
     const avatar = user.img;
     e.preventDefault();
 
-    let formdata = new FormData();
-    const filename = Date.now() + file.name;
-    formdata.append("name", filename);
-    formdata.append("file", file);
-    const newblog = { ...blog, author, avatar, image: filename };
+    // let formdata = new FormData();
+    // const filename = Date.now() + file.name;
+    // formdata.append("name", filename);
+    // formdata.append("file", file);
+    const newblog = { ...blog, author, avatar, image: file };
 
     try {
-      await axios.post("https://medium-backend-q3m4.onrender.com/api/upload", formdata);
-    } catch (err) {}
-    try {
       setLoading(true);
-      await axios.post("https://medium-backend-q3m4.onrender.com/api/blogs/addblog", newblog, {
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": localStorage.getItem("token"),
-        },
-      });
+      await axios.post(
+        "https://medium-backend-q3m4.onrender.com/api/blogs/addblog",
+        newblog,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: localStorage.getItem("token"),
+          },
+        }
+      );
       setBlog({ title: "", subtitle: "", description: "", tag: "", image: "" });
       setLoading(false);
       navigate("/myblogs");
@@ -67,7 +83,7 @@ const WriteBlog = () => {
             name="file"
             id="file"
             className="form-control"
-            onChange={(e) => setFile(e.target.files[0])}
+            onChange={HandleImage}
           />
         </div>
         <div className="mt-2">

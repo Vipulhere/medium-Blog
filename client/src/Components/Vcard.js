@@ -13,7 +13,8 @@ const Vcard = (props) => {
   return (
     <div className="Vcard mt-5 me-5">
       <div className="w-100">
-        <img src={PF + blog.image} className="main-img" width={"100%"} alt="img" />
+        <img src={blog.image} className="main-img" width={"100%"} alt="img" />
+        {/* <img src={PF + blog.image} className="main-img" width={"100%"} alt="img" /> */}
       </div>
       <div className="w-100 vcard-text">
         <Link

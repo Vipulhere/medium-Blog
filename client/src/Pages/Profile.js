@@ -10,7 +10,7 @@ const Profile = () => {
   const navigate = useNavigate();
   // const PF = "../../../server/Images/";
   // const PF = "../../../server/images/";
-  const PF= "https://medium-backend-q3m4.onrender.com/images/"
+  // const PF= "https://medium-backend-q3m4.onrender.com/images/"
 
   const months = [
     "Jan",
@@ -59,7 +59,7 @@ const Profile = () => {
           <div className="d-flex align-items-center">
             <div
               className="b-avatar"
-              style={{ background: `url('${PF + user.img}')` }}
+              style={{ background: `url('${user.img}')` }}
             ></div>
             <div
               className="d-flex align-items-center justify-content-between ms-4 
