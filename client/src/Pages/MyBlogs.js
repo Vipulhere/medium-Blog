@@ -73,7 +73,7 @@ const MyBlogs = () => {
                     : ""; */}
 
                 const date = new Date(elem.date);
-                const day = date.getUTCDay();
+                const day = date.getUTCDate();
                 const month = months[date.getMonth()];
                 const year = date.getUTCFullYear();
                 const FullDate = `${day} ${month},${year}`;
